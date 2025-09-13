@@ -1093,7 +1093,7 @@ extract_boot() {
             python3 "${KALLSYMS_FINDER}" "${OUTDIR}"/boot.img > "${OUTDIR}"/bootRE/boot_kallsyms.txt >/dev/null 2>&1
             echo "boot_kallsyms.txt generated"
         else
-            python3 "${KALLSYMS_FINDER}" "${OUTDIR}"/boot/kernel > "${OUTDIR}"/bootRE/kernel_kallsyms.txt >/dev/null 2>&1
+            python3 "${KALLSYMS_FINDER}" "${OUTDIR}"/boot.img > "${OUTDIR}"/bootRE/kernel_kallsyms.txt >/dev/null 2>&1
             echo "kernel_kallsyms.txt generated"
         fi
         
