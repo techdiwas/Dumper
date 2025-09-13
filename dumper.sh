@@ -1090,10 +1090,10 @@ extract_boot() {
         
         # Generate vmlinux ELF and kallsyms
         if [[ ! -f "${OUTDIR}"/vendor_boot.img ]]; then
-            python3 "${KALLSYMS_FINDER}" "${OUTDIR}"/boot.img > "${OUTDIR}"/bootRE/boot_kallsyms.txt >/dev/null 2>&1
+            python3 "${KALLSYMS_FINDER}" "${OUTDIR}"/boot.img > "${OUTDIR}"/bootRE/boot_kallsyms.txt 2>/dev/null
             echo "boot_kallsyms.txt generated"
         else
-            python3 "${KALLSYMS_FINDER}" "${OUTDIR}"/boot/kernel > "${OUTDIR}"/bootRE/kernel_kallsyms.txt >/dev/null 2>&1
+            python3 "${KALLSYMS_FINDER}" "${OUTDIR}"/boot/kernel > "${OUTDIR}"/bootRE/kernel_kallsyms.txt 2>/dev/null
             echo "kernel_kallsyms.txt generated"
         fi
         
