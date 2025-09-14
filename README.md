@@ -1,7 +1,7 @@
 ---
 
 <p align="center">
-  <img src="assets/logo.jpg" alt="Dumper Logo" width="360" />
+  <img src="assets/logo.jpg" alt="Dumper Logo" width="420" />
 </p>
 
 # Dumper: A Tool To Dump Android ROM/Firmware.
@@ -57,12 +57,14 @@ cd Dumper
 
 Run the setup script to install all dependencies:
 ```bash
-bash setup.sh
+chmod +x setup.sh
+./setup.sh
 ```
 
 ## Usage:
 
 ```bash
+chmod +x dumper.sh
 ./dumper.sh <Firmware File/Extracted Folder -OR- Supported Website Link>
 ```
 
@@ -94,18 +96,22 @@ Dumper can automatically push the extracted firmware to GitHub or GitLab reposit
 ### GitHub Setup:
 
 1. Create a `.github_token` file with your GitHub personal access token
-2. (Optional) Create a `.github_orgname` file with your organization name
+2. Create a `.github_orgname` file with your GitHub organization name or username.
 
 ### GitLab Setup:
 
 1. Create a `.gitlab_token` file with your GitLab personal access token
-2. (Optional) Create a `.gitlab_group` file with your group name
-3. (Optional) Create a `.gitlab_instance` file with your GitLab instance URL (default is gitlab.com)
+2. Create a `.gitlab_group` file with your group name
+3. Create a `.gitlab_instance` file with your GitLab instance URL (default is gitlab.com)
 
-### Telegram Notifications:
+---
+
+---
+
+## Telegram Notifications:
 
 1. Create a `.tg_token` file with your Telegram bot token
-2. (Optional) Create a `.tg_chat` file with your chat ID (default is @DumperDumps)
+2. Create a `.tg_chat` file with your chat ID (default is @DumperDumps)
 
 ---
 
