@@ -1428,16 +1428,25 @@ generate_twrp_tree() {
     
     # Determine which image to use for TWRP
     if [[ "$is_ab" = true ]]; then
-        if [ -f recovery.img ]; then
-            echo "Legacy A/B with recovery partition detected..."
+        if [[ -f recovery.img ]]; then
+            echo "Legacy A/B device with a dedicated recovery image detected..."
             twrpimg="recovery.img"
         else
+            echo "Modern A/B device with a dedicated boot image detected..."
             twrpimg="boot.img"
         fi
     else
-        twrpimg="recovery.img"
+        if [[ -f recovery.img ]]; then
+            echo "A-only device with a dedicated recovery image detected..."
+            twrpimg="recovery.img"
+        else
+            echo "A-only device but recovery image missing. Falling back to boot image..."
+            twrpimg="boot.img"
+        fi
     fi
-    
+
+    echo "Selected image: $twrpimg"
+
     # Generate TWRP device tree
     if [[ -f ${twrpimg} ]]; then
         mkdir -p $twrpdtout
